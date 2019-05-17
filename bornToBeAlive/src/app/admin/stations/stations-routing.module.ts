@@ -3,12 +3,21 @@ import { Routes, RouterModule } from '@angular/router';
 
 // Components
 import { StationsComponent } from './stations.component';
+import { MapsComponent } from './maps/maps.component';
 
 const routes: Routes = [
   {
-    path: '**',
+    path: '',
     component: StationsComponent 
   },
+  {
+    path: 'maps',
+    component: MapsComponent 
+  },
+  {
+    path: '**',
+    component: StationsComponent 
+  }
 ];
 
 @NgModule({
