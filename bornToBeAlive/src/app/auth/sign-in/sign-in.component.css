@@ -1,0 +1,40 @@
+.box {
+  margin-right: 10px;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.formulaire {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.buttons {
+  margin-top: 10px; 
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+button {
+  margin: 5px;
+}
+
+.mat-form-field {
+  width: 100%;
+} 
+
+.forget_password{
+  cursor: pointer;
+  font-size: 80%;
+}
+
+@media screen and (min-width: 340px) {
+  .box {
+    margin-top: 15%;
+  }
+}
