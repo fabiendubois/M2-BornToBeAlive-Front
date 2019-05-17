@@ -11,13 +11,7 @@ import { environment } from '../../../environments/environment';
 export class AuthService {
   constructor(private httpClient: HttpClient) { }
 
-  sign_in(login: string, password: string): Observable<any> {
-    let obj = {
-      grant_type: "password",
-      username: "fabiendubois",
-      password: "jwtpass"
-    }
-
+  sign_in(): Observable<any> {
     return this.httpClient
       .post<any>('http://borntobealiveclientid:btbeacs135792468@born-to-be-alive-api.herokuapp.com/oauth/token?grant_type=password&username=fabiendubois&password=jwtpass', {})
       .pipe(tap(result => {

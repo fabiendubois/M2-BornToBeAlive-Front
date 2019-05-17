@@ -2,3 +2,8 @@
   margin-left: 5px;
   margin-right: 5px;
 }
+
+.active-link {
+  color: #ff0055;
+  font-weight: 550;
+}

@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 
 // Components
 import { SignInComponent } from './sign-in/sign-in.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
 
 const routes: Routes = [
   {
@@ -14,10 +13,6 @@ const routes: Routes = [
   {
     path: 'sign_in',
     component: SignInComponent
-  },
-  {
-    path: 'sign_up',
-    component: SignUpComponent
   },
   {
     path: '**',

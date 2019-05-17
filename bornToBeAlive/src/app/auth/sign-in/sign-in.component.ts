@@ -24,7 +24,7 @@ export class SignInComponent implements OnInit {
   }
 
   sign_in() {
-    this.authService.sign_in("toto", "titi")
+    this.authService.sign_in()
     .subscribe(
       (data) => {
         console.log('DATA', data);
@@ -32,9 +32,4 @@ export class SignInComponent implements OnInit {
       }
     );   
   }
-
-  redirect_to_sign_up() {
-    this.router.navigate(['/auth/sign_up']);
-  }
-
 }
