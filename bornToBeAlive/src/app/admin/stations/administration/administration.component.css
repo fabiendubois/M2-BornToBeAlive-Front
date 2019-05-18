@@ -6,7 +6,6 @@ table {
   width: 100%;
 }
 
-
 .th-action-column, .mat-cell-buttons {
   text-align: right;
 }
@@ -25,4 +24,13 @@ table {
 
 .add_title {
   margin: 20px;
+}
+
+.spinner {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  align-content: center;
+  justify-content: center;
+  margin-top: 20%
 }

@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  oauthUrl: "http://borntobealiveclientid:btbeacs135792468@born-to-be-alive-api.herokuapp.com/"
+  oauthUrl: "http://borntobealiveclientid:btbeacs135792468@born-to-be-alive-api.herokuapp.com/",
+  apiUrl: 'http://localhost:3000/'
 };
 
 /*

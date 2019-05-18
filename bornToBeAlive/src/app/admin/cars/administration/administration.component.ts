@@ -1,6 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 
+import { CarsService } from 'src/app/shared/services/cars.service';
+import { observable } from 'rxjs';
+
 @Component({
   selector: 'app-administration',
   templateUrl: './administration.component.html',
@@ -8,24 +11,7 @@ import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 })
 export class AdministrationComponent implements OnInit {
 
-  cars = [
-    {
-      "id": 1,
-      "modele": "zoe",
-      "marque": "renault",
-      "immatriculation": 'DX-567-JE',
-      "autonomy": 200,
-      "power_max": 24
-    },
-    {
-      "id": 2,
-      "modele": "modele S",
-      "marque": "tesla",
-      "immatriculation": 'WW-867-JX',
-      "autonomy": 500,
-      "power_max": 24
-    },
-  ]
+  cars;
 
   displayedColumns: string[] = ['id', 'marque', 'modele', 'autonomy', 'power_max', 'immatriculation', 'actions'];
   dataSource: MatTableDataSource<any>;
@@ -33,12 +19,27 @@ export class AdministrationComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private carsService: CarsService) {
     this.dataSource = new MatTableDataSource(this.cars);
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
+  }
+
+  ngOnInit() {
+    this.fetchCars();
+  }
+
+  fetchCars() {
+    this.carsService.getCars().subscribe(
+      (data) => {
+        this.cars = data;
+        this.upDataSource(data);
+      }
+    )
+  }
+
+  upDataSource(data) {
+    this.dataSource.data = data;
   }
 
   applyFilter(filterValue: string) {

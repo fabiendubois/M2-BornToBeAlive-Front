@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { StationsService } from 'src/app/shared/services/stations.service';
 
 @Component({
   selector: 'app-administration',
@@ -8,22 +9,7 @@ import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 })
 export class AdministrationComponent implements OnInit {
 
-  stations = [
-    {
-      "id": 1,
-      "name": "rizomm 1",
-      "power": "22",
-      "marque": "G2Mobility",
-      "organisation": "la catho"
-    },
-    {
-      "id": 2,
-      "name": "rizomm 2",
-      "power": "11",
-      "marque": "G2Mobility",
-      "organisation": "la catho"
-    }
-  ]
+  stations;
 
   displayedColumns: string[] = ['id', 'name', 'marque', 'power', 'organisation', 'actions'];
   dataSource: MatTableDataSource<any>;
@@ -32,12 +18,27 @@ export class AdministrationComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private stationsService: StationsService) {
     this.dataSource = new MatTableDataSource(this.stations);
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
+   }
+
+  ngOnInit() {
+    this.fetchStations();
+  }
+
+  fetchStations() {
+    this.stationsService.getStations().subscribe(
+      (data) => {
+        this.stations = data;
+        this.upDataSource(data);
+      }
+    )
+  }
+
+  upDataSource(data) {
+    this.dataSource.data = data;
   }
 
   applyFilter(filterValue: string) {

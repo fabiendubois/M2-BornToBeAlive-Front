@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="cars">
   <mat-form-field>
     <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Rechercher une voiture">
   </mat-form-field>
@@ -62,5 +62,11 @@
       </tr>
     </table>
     <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+  </div>
+</div>
+
+<div *ngIf="!cars" class="spinner">
+  <div>
+    <mat-spinner></mat-spinner>
   </div>
 </div>
