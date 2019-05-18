@@ -1,0 +1,66 @@
+<div>
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Rechercher une voiture">
+  </mat-form-field>
+
+  <div>
+    <table mat-table [dataSource]="dataSource" matSort>
+
+      <!-- id Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+
+      <!-- Marque Column -->
+      <ng-container matColumnDef="marque">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Marque </th>
+        <td mat-cell *matCellDef="let element"> {{element.marque}}</td>
+      </ng-container>
+
+      <!-- Modèle Column -->
+      <ng-container matColumnDef="modele">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Modèle </th>
+        <td mat-cell *matCellDef="let element"> {{element.modele}}</td>
+      </ng-container>
+
+      <!-- Immatriculation Column -->
+      <ng-container matColumnDef="immatriculation">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Immatriculation </th>
+        <td mat-cell *matCellDef="let element"> {{element.immatriculation}}</td>
+      </ng-container>
+
+      <!-- Autonomie Column -->
+      <ng-container matColumnDef="autonomy">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Autonomie </th>
+        <td mat-cell *matCellDef="let element"> {{element.autonomy}}</td>
+      </ng-container>
+
+      <!-- power_max Column -->
+      <ng-container matColumnDef="power_max">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Power Max </th>
+        <td mat-cell *matCellDef="let element"> {{element.power_max}}</td>
+      </ng-container>
+
+      <!-- actions -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef class="th-action-column">
+          <button mat-icon-button color="primary" (click)="addDialog()">
+            <mat-icon aria-label="Ajouter">add</mat-icon>
+          </button>
+        </th>
+
+        <td mat-cell *matCellDef="let element" class="mat-cell-buttons">
+          <button mat-icon-button color="warn" (click)="deleteDialog(element)">
+            <mat-icon aria-label="Supprimer">delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+      </tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+  </div>
+</div>

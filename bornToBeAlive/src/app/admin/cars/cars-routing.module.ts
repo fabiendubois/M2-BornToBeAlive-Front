@@ -4,20 +4,32 @@ import { Routes, RouterModule } from '@angular/router';
 // Components
 import { CarsComponent } from './cars.component';
 import { MapsComponent } from './maps/maps.component';
+import { AdministrationComponent } from './administration/administration.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: CarsComponent 
+    redirectTo: 'administration',
+    pathMatch: 'full'
   },
   {
-    path: 'maps',
-    component: MapsComponent 
+    path: '',
+    component: CarsComponent,
+    children: [
+      {
+        path: 'administration',
+        component: AdministrationComponent
+      },
+      {
+        path: 'maps',
+        component: MapsComponent
+      }
+    ]
   },
   {
     path: '**',
-    component: CarsComponent 
-  },
+    redirectTo: 'administration'
+  }
 ];
 
 @NgModule({

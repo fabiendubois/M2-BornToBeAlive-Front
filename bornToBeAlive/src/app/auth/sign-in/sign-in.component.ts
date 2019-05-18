@@ -29,6 +29,8 @@ export class SignInComponent implements OnInit {
       (data) => {
         console.log('DATA', data);
         // this.router.navigate(['user']);
+      }, (errro) => {
+        console.log('ERREUR', errro)
       }
     );   
   }

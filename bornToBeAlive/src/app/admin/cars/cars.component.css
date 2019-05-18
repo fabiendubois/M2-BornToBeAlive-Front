@@ -1,28 +1,4 @@
-table {
-  width: 100%;
-}
-
-.mat-table-container .mat-table {
-  width: 100%;
-}
-
-
-.th-action-column, .mat-cell-buttons {
-  text-align: right;
-}
-
-.mat-form-field {
-  width: 100%
-}
-
-.add {
-  margin: 20px;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  text-align: center;
-}
-
-.add_title {
-  margin: 20px;
+.active-link {
+  color: #ffa600;
+  font-weight: 550;
 }
