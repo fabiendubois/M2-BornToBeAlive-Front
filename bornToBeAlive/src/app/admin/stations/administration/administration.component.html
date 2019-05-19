@@ -39,6 +39,9 @@
       <!-- actions -->
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef class="th-action-column">
+          <button mat-icon-button color="primary" (click)="onRefresh()">
+            <mat-icon aria-label="Rafraichir">refresh</mat-icon>
+          </button>
           <button mat-icon-button color="primary" (click)="addDialog()">
             <mat-icon aria-label="Ajouter">add</mat-icon>
           </button>

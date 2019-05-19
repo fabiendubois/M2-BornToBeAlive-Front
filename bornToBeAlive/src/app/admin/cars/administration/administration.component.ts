@@ -42,6 +42,11 @@ export class AdministrationComponent implements OnInit {
     this.dataSource.data = data;
   }
 
+  onRefresh() {
+    this.cars = undefined;
+    this.fetchCars();
+  }
+
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
 
