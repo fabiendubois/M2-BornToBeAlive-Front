@@ -34,7 +34,7 @@ export class AdministrationComponent implements OnInit {
         this.stations = data;
         this.upDataSource(data);
       }
-    )
+    );
   }
 
   upDataSource(data) {

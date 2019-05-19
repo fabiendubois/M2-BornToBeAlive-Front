@@ -12,7 +12,7 @@ const DEFAULT_ZOOM_MAP = 20;
 })
 export class MapsComponent implements OnInit {
 
-  stationsMap
+  stationsMap;
   mapMarker;
 
   constructor() { }

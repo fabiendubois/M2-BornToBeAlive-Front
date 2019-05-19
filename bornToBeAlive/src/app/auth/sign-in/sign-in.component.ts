@@ -30,8 +30,8 @@ export class SignInComponent implements OnInit {
         console.log('DATA', data);
         // this.router.navigate(['user']);
       }, (errro) => {
-        console.log('ERREUR', errro)
+        console.log('ERREUR', errro);
       }
-    );   
+    );
   }
 }

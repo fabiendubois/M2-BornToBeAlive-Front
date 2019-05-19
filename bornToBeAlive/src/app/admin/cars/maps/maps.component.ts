@@ -11,7 +11,7 @@ const DEFAULT_ZOOM_MAP = 20;
   styleUrls: ['./maps.component.css']
 })
 export class MapsComponent implements OnInit {
-  stationsMap
+  stationsMap;
   mapMarker;
 
   constructor() { }

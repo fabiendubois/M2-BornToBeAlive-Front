@@ -9,7 +9,7 @@ import { SimpleLayoutComponent } from './simple-layout/simple-layout.component';
 // HTTP
 import { HttpClientModule } from '@angular/common/http';
 
-// Material import 
+// Material import
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';

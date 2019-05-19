@@ -35,7 +35,7 @@ export class AdministrationComponent implements OnInit {
         this.cars = data;
         this.upDataSource(data);
       }
-    )
+    );
   }
 
   upDataSource(data) {

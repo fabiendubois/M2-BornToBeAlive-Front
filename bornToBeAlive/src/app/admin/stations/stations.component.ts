@@ -10,7 +10,7 @@ export class StationsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    
+
   }
 
 }
