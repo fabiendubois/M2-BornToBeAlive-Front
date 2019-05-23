@@ -1,0 +1,24 @@
+.general {
+  width: 400px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.container>* {
+  width: 100%;
+}
+
+.coordinates {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}

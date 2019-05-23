@@ -26,6 +26,10 @@ const routes: Routes = [
     component: FullLayoutComponent,
     children: [
       {
+        path: 'reservations',
+        loadChildren: './admin/reservations/reservations.module#ReservationsModule'
+      },
+      {
         path: 'cars',
         loadChildren: './admin/cars/cars.module#CarsModule'
       },

@@ -1,0 +1,33 @@
+<div class="general">
+  <h1 mat-dialog-title>Ajouter une voiture</h1>
+  <div class="container">
+
+    <mat-form-field>
+      <mat-select placeholder="Organisation">
+        <mat-option value="option">Option</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="Marque">
+        <mat-option value="option">Option</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="Modèle">
+        <mat-option value="option">Option</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Immatriculation">
+    </mat-form-field>
+
+  </div>
+
+  <div class="buttons" mat-dialog-actions>
+    <button mat-button color="info" mat-dialog-close>Retour</button>
+    <button mat-flat-button color="primary" (click)="onAdd()">Ajouter</button>
+  </div>
+</div>

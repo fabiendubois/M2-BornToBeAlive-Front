@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CarsComponent } from './cars.component';
 import { MapsComponent } from './maps/maps.component';
 import { AdministrationComponent } from './administration/administration.component';
+import { SettingsComponent } from './settings/settings.component';
 
 const routes: Routes = [
   {
@@ -23,7 +24,11 @@ const routes: Routes = [
       {
         path: 'maps',
         component: MapsComponent
-      }
+      },
+      {
+        path: 'settings',
+        component: SettingsComponent
+      },
     ]
   },
   {

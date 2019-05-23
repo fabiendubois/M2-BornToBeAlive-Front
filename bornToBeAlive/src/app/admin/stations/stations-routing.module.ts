@@ -17,6 +17,10 @@ const routes: Routes = [
     component: StationsComponent,
     children: [
       {
+        path: 'settings',
+        component: AdministrationComponent
+      },
+      {
         path: 'administration',
         component: AdministrationComponent
       },

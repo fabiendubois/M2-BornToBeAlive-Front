@@ -1,6 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 import { StationsService } from 'src/app/shared/services/stations.service';
+import { DeleteComponent } from './dialogs/delete/delete.component';
+import { AddComponent } from './dialogs/add/add.component';
 
 @Component({
   selector: 'app-administration',
@@ -17,12 +20,11 @@ export class AdministrationComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-
-  constructor(private stationsService: StationsService) {
+  constructor(private stationsService: StationsService, public dialog: MatDialog) {
     this.dataSource = new MatTableDataSource(this.stations);
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
-   }
+  }
 
   ngOnInit() {
     this.fetchStations();
@@ -46,9 +48,30 @@ export class AdministrationComponent implements OnInit {
     this.fetchStations();
   }
 
+  onDelete(station) {
+    const dialogRef = this.dialog.open(DeleteComponent, {
+      data: { id: station.id, name: station.name }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.onRefresh();
+      }
+    });
+  }
+
+  onAdd() {
+    const dialogRef = this.dialog.open(AddComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.onRefresh();
+      }
+    });
+  }
+
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
-
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }

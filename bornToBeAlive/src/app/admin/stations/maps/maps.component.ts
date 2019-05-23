@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
+import { StationsService } from 'src/app/shared/services/stations.service';
 
 const LATITUDE_UNIV_CATHO_LILLE = 50.63275064259198;
 const LONGITUDE_UNIV_CATHO_LILLE = 3.0462591273169437;
@@ -12,14 +13,16 @@ const DEFAULT_ZOOM_MAP = 20;
 })
 export class MapsComponent implements OnInit {
 
+  stations;
   stationsMap;
   mapMarker;
 
-  constructor() { }
+  constructor(private stationsService: StationsService) { }
 
   ngOnInit() {
     this.initMap();
     this.initMapMarker();
+    this.fetchStations();
   }
 
   initMap() {
@@ -37,11 +40,26 @@ export class MapsComponent implements OnInit {
     });
   }
 
+  addAllMarkers() {
+    for (const station of this.stations) {
+      this.addMarker(station.latitude, station.longitude, station.name);
+    }
+  }
+
   addMarker(latitude, longitude, txt) {
     L.marker([latitude, longitude], { icon: this.mapMarker })
-      .addTo(this.mapMarker)
+      .addTo(this.stationsMap)
       .bindPopup(txt, { autoClose: false })
       .openPopup();
+  }
+
+  fetchStations() {
+    this.stationsService.getStations().subscribe(
+      (data) => {
+        this.stations = data;
+        this.addAllMarkers();
+      }
+    );
   }
 
 }

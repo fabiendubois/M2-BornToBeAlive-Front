@@ -59,7 +59,7 @@ import { FormsModule } from '@angular/forms';
     ReactiveFormsModule,
     FormsModule,
     // Http
-    HttpClientModule
+    HttpClientModule,
   ],
   exports: [
     // Material Import

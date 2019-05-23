@@ -1,3 +1,15 @@
+.title {
+  font-size: 120%;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.buttons {
+  margin-right: 1%;
+}
+
 .active-link {
   color: #FFAB40;
   font-weight: 550;
