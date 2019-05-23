@@ -9,8 +9,12 @@ import { environment } from '../../../environments/environment';
 export class CarsService {
   constructor(private httpClient: HttpClient) { }
 
-  getCars(): Observable<any> {
+  getAll(): Observable<any> {
     return this.httpClient.get<any>(environment.apiUrl + 'cars');
+  }
+
+  getReservations(): Observable<any> {
+    return this.httpClient.get<any>(environment.apiUrl + 'cars/reservations');
   }
 
   deleteCar(id: number): Observable<any> {

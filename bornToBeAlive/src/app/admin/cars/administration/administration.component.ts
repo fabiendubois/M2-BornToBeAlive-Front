@@ -31,7 +31,7 @@ export class AdministrationComponent implements OnInit {
   }
 
   fetchCars() {
-    this.carsService.getCars().subscribe(
+    this.carsService.getAll().subscribe(
       (data) => {
         this.cars = data;
         this.upDataSource(data);

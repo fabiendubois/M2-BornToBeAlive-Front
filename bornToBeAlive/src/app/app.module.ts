@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,14 +12,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
-    AppComponent  ],
+    AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SharedModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'fr' }, ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor() {
+    registerLocaleData(localeFr);
+  }
+}
