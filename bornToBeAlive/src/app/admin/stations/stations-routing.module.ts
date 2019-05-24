@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { StationsComponent } from './stations.component';
 import { MapsComponent } from './maps/maps.component';
 import { AdministrationComponent } from './administration/administration.component';
+import { ReservationComponent } from './reservation/reservation.component';
 
 const routes: Routes = [
   {
@@ -17,8 +18,8 @@ const routes: Routes = [
     component: StationsComponent,
     children: [
       {
-        path: 'settings',
-        component: AdministrationComponent
+        path: 'reservation',
+        component: ReservationComponent
       },
       {
         path: 'administration',
@@ -27,7 +28,11 @@ const routes: Routes = [
       {
         path: 'maps',
         component: MapsComponent
-      }
+      },
+      {
+        path: 'settings',
+        component: AdministrationComponent
+      },
     ]
   },
   {

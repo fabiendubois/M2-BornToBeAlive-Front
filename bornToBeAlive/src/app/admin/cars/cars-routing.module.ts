@@ -6,6 +6,7 @@ import { CarsComponent } from './cars.component';
 import { MapsComponent } from './maps/maps.component';
 import { AdministrationComponent } from './administration/administration.component';
 import { SettingsComponent } from './settings/settings.component';
+import { ReservationComponent } from './reservation/reservation.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
     path: '',
     component: CarsComponent,
     children: [
+      {
+        path: 'reservation',
+        component: ReservationComponent
+      },
       {
         path: 'administration',
         component: AdministrationComponent

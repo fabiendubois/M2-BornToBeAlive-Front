@@ -9,14 +9,14 @@ import timeGrigPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 
 // Service
-import { CarsService } from 'src/app/shared/services/cars.service';
+import { StationsService } from 'src/app/shared/services/stations.service';
 
 @Component({
-  selector: 'app-reservations',
-  templateUrl: './reservations.component.html',
-  styleUrls: ['./reservations.component.css']
+  selector: 'app-reservation',
+  templateUrl: './reservation.component.html',
+  styleUrls: ['./reservation.component.css']
 })
-export class ReservationsComponent implements OnInit {
+export class ReservationComponent implements OnInit {
 
   @ViewChild('calendar') calendarComponent: FullCalendarComponent; // the #calendar in the template
 
@@ -25,20 +25,18 @@ export class ReservationsComponent implements OnInit {
   calendarWeekends = false;
   locale = frLocale;
 
-  calendarEvents: EventInput[] = [
-    // { title: 'Event Now', start: new Date() },
-  ];
+  calendarEvents: EventInput[] = [];
 
   reservations;
 
-  constructor(private carsService: CarsService) { }
+  constructor(private stationsService: StationsService) { }
 
   ngOnInit(): void {
     this.fetchReservations();
   }
 
   fetchReservations() {
-    this.carsService.getReservations().subscribe(
+    this.stationsService.getReservations().subscribe(
       (data) => {
         this.reservations = data;
         this.makeEventsFromReservations();
@@ -48,29 +46,12 @@ export class ReservationsComponent implements OnInit {
   makeEventsFromReservations() {
     for (const reservation of this.reservations) {
       const obj = {
-        title: `${reservation.cars.marque.toUpperCase()}  ${reservation.cars.modele} ${reservation.cars.immatriculation}`,
+        title: `${reservation.stations.name.toUpperCase()}  ${reservation.stations.organisation}`,
         start: new Date(reservation.debut),
         end: new Date(reservation.fin)
       };
 
       this.calendarEvents = this.calendarEvents.concat(obj);
-    }
-  }
-
-  addEvent() {
-    console.log(this.calendarEvents);
-    const obj = { title: 'TOTO', start: new Date('2019-05-17T03:24:00'), end: new Date('2019-05-17T04:24:00') };
-    this.calendarEvents = this.calendarEvents.concat(obj);
-    console.log(this.calendarEvents);
-  }
-
-  handleDateClick(arg) {
-    if (confirm('Would you like to add an event to ' + arg.dateStr + ' ?')) {
-      this.calendarEvents = this.calendarEvents.concat({ // add new event data. must create new array
-        title: 'New Event',
-        start: arg.date,
-        allDay: arg.allDay
-      });
     }
   }
 }

@@ -11,9 +11,17 @@ import { AdministrationComponent } from './administration/administration.compone
 import { DeleteComponent } from './administration/dialogs/delete/delete.component';
 import { AddComponent } from './administration/dialogs/add/add.component';
 import { SettingsComponent } from './settings/settings.component';
+import { ReservationComponent } from './reservation/reservation.component';
 
 @NgModule({
-  declarations: [CarsComponent, MapsComponent, AdministrationComponent, DeleteComponent, AddComponent, SettingsComponent],
+  declarations: [
+    CarsComponent,
+    MapsComponent,
+    AdministrationComponent,
+    DeleteComponent,
+    AddComponent,
+    SettingsComponent,
+    ReservationComponent],
   imports: [
     CommonModule,
     CarsRoutingModule,

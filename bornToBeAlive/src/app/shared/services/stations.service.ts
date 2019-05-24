@@ -13,4 +13,8 @@ export class StationsService {
     return this.httpClient.get<any>(environment.apiUrl + 'stations');
   }
 
+  getReservations(): Observable<any> {
+    return this.httpClient.get<any>(environment.apiUrl + 'stations/reservations');
+  }
+
 }

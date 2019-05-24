@@ -32,6 +32,9 @@ import { MatDividerModule } from '@angular/material/divider';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 
+// FullCalendar
+import { FullCalendarModule } from '@fullcalendar/angular';
+
 @NgModule({
   declarations: [FullLayoutComponent, SimpleLayoutComponent],
   imports: [
@@ -60,6 +63,8 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     // Http
     HttpClientModule,
+    // Full Calendar
+    FullCalendarModule,
   ],
   exports: [
     // Material Import
@@ -84,7 +89,9 @@ import { FormsModule } from '@angular/forms';
     ReactiveFormsModule,
     FormsModule,
     // Http
-    HttpClientModule
+    HttpClientModule,
+    // Full Calendar
+    FullCalendarModule,
   ]
 })
 export class SharedModule { }

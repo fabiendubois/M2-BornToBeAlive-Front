@@ -1,0 +1,16 @@
+.active-link {
+  color: #009588;
+  font-weight: 550;
+}
+
+.components {
+  margin: 5px;
+}
+
+.app {
+  width: 60%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+}
