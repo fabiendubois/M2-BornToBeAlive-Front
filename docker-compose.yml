@@ -1,0 +1,10 @@
+version: '3.3'
+
+services:
+  angular:
+    build: .
+    restart: always
+    volumes:
+     - ./dist/bornToBeAlive:/usr/share/nginx/html:ro
+    ports:
+     - 80:80
