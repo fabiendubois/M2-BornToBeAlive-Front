@@ -1,3 +1,4 @@
+// Module
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -67,7 +68,7 @@ import { FullCalendarModule } from '@fullcalendar/angular';
     FullCalendarModule,
   ],
   exports: [
-    // Material Import
+    // Material Export
     MatCardModule,
     MatButtonModule,
     MatToolbarModule,

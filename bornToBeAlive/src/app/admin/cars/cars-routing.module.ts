@@ -1,3 +1,4 @@
+// Modules
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -11,7 +12,7 @@ import { ReservationComponent } from './reservation/reservation.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'administration',
+    redirectTo: 'reservation',
     pathMatch: 'full'
   },
   {
@@ -38,7 +39,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'administration'
+    redirectTo: 'reservation'
   }
 ];
 

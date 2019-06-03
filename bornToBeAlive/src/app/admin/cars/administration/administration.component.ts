@@ -15,13 +15,13 @@ export class AdministrationComponent implements OnInit {
   cars;
 
   displayedColumns: string[] = ['id', 'marque', 'modele', 'autonomy', 'power_max', 'immatriculation', 'actions'];
-  
+
   dataSource;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private carsService: CarsService, public dialog: MatDialog) { 
+  constructor(private carsService: CarsService, public dialog: MatDialog) {
     this.dataSource = new MatTableDataSource();
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
