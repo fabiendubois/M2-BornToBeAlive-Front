@@ -31,7 +31,7 @@ export class AdministrationComponent implements OnInit {
   }
 
   fetchStations() {
-    this.stationsService.getStations().subscribe(
+    this.stationsService.getAll().subscribe(
       (data) => {
         this.stations = data;
         this.upDataSource(data);

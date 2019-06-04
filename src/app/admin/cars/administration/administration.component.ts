@@ -61,7 +61,7 @@ export class AdministrationComponent implements OnInit {
 
   onDelete(car) {
     const dialogRef = this.dialog.open(DeleteComponent, {
-      data: { id: car.id, modele: car.modele }
+      data: { id: car.id, modele: car.modele, immatriculation: car.immatriculation }
     });
 
     dialogRef.afterClosed().subscribe(result => {

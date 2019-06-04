@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from '../../../environments/environment';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,7 @@ import { environment } from '../../../environments/environment';
 export class StationsService {
   constructor(private httpClient: HttpClient) { }
 
-  getStations(): Observable<any> {
+  getAll(): Observable<any> {
     return this.httpClient.get<any>(environment.apiUrl + 'stations');
   }
 

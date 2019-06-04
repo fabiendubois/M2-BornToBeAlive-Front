@@ -24,14 +24,14 @@ export class SignInComponent implements OnInit {
   }
 
   sign_in() {
-    this.authService.sign_in()
-    .subscribe(
-      (data) => {
-        console.log('DATA', data);
-        // this.router.navigate(['user']);
-      }, (errro) => {
-        console.log('ERREUR', errro);
-      }
-    );
+    this.authService.obtainAccessToken();
+    // .subscribe(
+    //   (data) => {
+    //     console.log('DATA', data);
+    //     // this.router.navigate(['user']);
+    //   }, (errro) => {
+    //     console.log('ERREUR', errro);
+    //   }
+    // );
   }
 }
