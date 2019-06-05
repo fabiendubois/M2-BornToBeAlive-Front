@@ -1,4 +1,4 @@
-# BornToBeAlive [![Build Status](https://travis-ci.com/fabiendubois/M2_BornToBeAlive.svg?branch=master)](https://travis-ci.com/fabiendubois/M2_BornToBeAlive)
+# BornToBeAlive [![Build Status](https://travis-ci.com/fabiendubois/M2_BornToBeAlive_Front.svg?branch=master)](https://travis-ci.com/fabiendubois/M2_BornToBeAlive_Front)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
 
