@@ -11,11 +11,11 @@ export class AuthService {
   constructor(private httpClient: HttpClient) { }
 
   obtainAccessToken() {
-    let username = 'fabiendubois';
-    let password = 'jwtpass';
+    const username = 'fabiendubois';
+    const password = 'jwtpass';
 
-    let TOKEN_AUTH_USERNAME = 'borntobealiveclientid';
-    let TOKEN_AUTH_PASSWORD = 'btbeacs135792468';
+    const TOKEN_AUTH_USERNAME = 'borntobealiveclientid';
+    const TOKEN_AUTH_PASSWORD = 'btbeacs135792468';
 
     const body = `username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}&grant_type=password`;
 
