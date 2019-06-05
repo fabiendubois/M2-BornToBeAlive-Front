@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator, MatSort, MatTableDataSource, MatDialog } from '@angular/material';
+import { MatPaginator, MatTableDataSource, MatDialog } from '@angular/material';
 
 import { CarsService } from 'src/app/shared/services/cars.service';
 import { DeleteComponent } from './dialogs/delete/delete.component';
@@ -19,11 +19,9 @@ export class AdministrationComponent implements OnInit {
   dataSource;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
 
   constructor(private carsService: CarsService, public dialog: MatDialog) {
     this.dataSource = new MatTableDataSource();
-    this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
 

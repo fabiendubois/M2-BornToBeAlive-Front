@@ -13,6 +13,10 @@ export class CarsService {
     return this.httpClient.get<any>(environment.apiUrl + 'cars');
   }
 
+  getModels(): Observable<any> {
+    return this.httpClient.get<any>(environment.apiUrl + 'cars/models');
+  }
+
   getReservations(): Observable<any> {
     return this.httpClient.get<any>(environment.apiUrl + 'cars/reservations');
   }

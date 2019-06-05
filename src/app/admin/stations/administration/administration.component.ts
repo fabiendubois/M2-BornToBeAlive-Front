@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { StationsService } from 'src/app/shared/services/stations.service';
 import { DeleteComponent } from './dialogs/delete/delete.component';
 import { AddComponent } from './dialogs/add/add.component';
@@ -18,11 +18,9 @@ export class AdministrationComponent implements OnInit {
   dataSource: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
 
   constructor(private stationsService: StationsService, public dialog: MatDialog) {
     this.dataSource = new MatTableDataSource(this.stations);
-    this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
 

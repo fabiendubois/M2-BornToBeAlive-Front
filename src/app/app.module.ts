@@ -11,14 +11,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
-    AppComponent],
+    AppComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SharedModule,
     BrowserAnimationsModule,
   ],
-  providers: [{ provide: LOCALE_ID, useValue: 'fr' }, ],
+  providers: [{ provide: LOCALE_ID, useValue: 'fr' },],
   bootstrap: [AppComponent]
 })
 export class AppModule {
