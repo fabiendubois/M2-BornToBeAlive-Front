@@ -14,7 +14,7 @@ export class AdministrationComponent implements OnInit {
 
   cars;
 
-  displayedColumns: string[] = ['id', 'marque', 'modele', 'autonomy', 'power_max', 'immatriculation', 'actions'];
+  displayedColumns: string[] = ['id', 'marque', 'modele', 'autonomie', 'description', 'immatriculation', 'actions'];
 
   dataSource;
 

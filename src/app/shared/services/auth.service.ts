@@ -10,10 +10,7 @@ import { HttpHeaders } from '@angular/common/http';
 export class AuthService {
   constructor(private httpClient: HttpClient) { }
 
-  obtainAccessToken() {
-    const username = 'fabiendubois';
-    const password = 'jwtpass';
-
+  obtainAccessToken(username, password) {
     const TOKEN_AUTH_USERNAME = 'borntobealiveclientid';
     const TOKEN_AUTH_PASSWORD = 'btbeacs135792468';
 

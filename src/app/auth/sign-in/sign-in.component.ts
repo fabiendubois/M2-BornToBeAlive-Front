@@ -19,19 +19,19 @@ export class SignInComponent implements OnInit {
   ngOnInit() {
     this.sign_in_form = this.formBuilder.group({
       login: ['', [Validators.required]],
-      password: ['', [Validators.required]]
+      currentPassword: ['', [Validators.required]]
     });
   }
 
-  sign_in() {
-    this.authService.obtainAccessToken();
-    // .subscribe(
-    //   (data) => {
-    //     console.log('DATA', data);
-    //     // this.router.navigate(['user']);
-    //   }, (errro) => {
-    //     console.log('ERREUR', errro);
-    //   }
-    // );
+  signIn() {
+    const val = this.sign_in_form.value;
+    if (val.email && val.currentPassword) {
+      this.authService.obtainAccessToken(val.email, val.currentPassword)
+        .subscribe(
+          (data) => {
+            this.router.navigate(['admin/stations/']);
+          }
+        );
+    }
   }
 }
