@@ -10,7 +10,7 @@ import { HttpHeaders } from '@angular/common/http';
 export class AuthService {
   constructor(private httpClient: HttpClient) { }
 
-  obtainAccessToken(username, password) {
+  obtainAccessToken(username, password): Observable<any> {
     const TOKEN_AUTH_USERNAME = 'borntobealiveclientid';
     const TOKEN_AUTH_PASSWORD = 'btbeacs135792468';
 
@@ -27,8 +27,6 @@ export class AuthService {
 
     const oauth2_token_endpoint = 'https://born-to-be-alive-api.herokuapp.com/oauth/token';
 
-    this.httpClient.post<any>(oauth2_token_endpoint, body, options).subscribe(
-      data => console.log(data),
-      err => alert('Invalid Credentials'));
+    return this.httpClient.post<any>(oauth2_token_endpoint, body, options);
   }
 }
