@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "marque": "Tesla",
+    "modele": "3",
+    "description": "Autonomie Standard Plus",
+    "autonomie": 415,
+    "typePrise": "Type2"
+  },
+  {
+    "id": 2,
+    "marque": "Tesla",
+    "modele": "S",
+    "description": "Grande Autonomie",
+    "autonomie": 610,
+    "typePrise": "Type2"
+  },
+  {
+    "id": 3,
+    "marque": "Renault",
+    "modele": "Zoe",
+    "description": "Zen",
+    "autonomie": 300,
+    "typePrise": "Type2"
+  }
+]

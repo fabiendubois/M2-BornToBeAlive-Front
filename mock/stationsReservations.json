@@ -1,0 +1,28 @@
+[
+  {
+    "stations": {
+      "id": 1,
+      "name": "rizomm 1",
+      "power": "22",
+      "marque": "G2Mobility",
+      "organisation": "la catho",
+      "latitude": 50.632681,
+      "longitude": 3.045831 
+    },
+    "debut": "2019-05-17T08:00:00",
+    "fin": "2019-05-17T17:00:00"
+  },
+  {
+    "stations": {
+      "id": 1,
+      "name": "rizomm 1",
+      "power": "22",
+      "marque": "G2Mobility",
+      "organisation": "la catho",
+      "latitude": 50.632681,
+      "longitude": 3.045831 
+    },
+    "debut": "2019-05-19T08:00:00",
+    "fin": "2019-05-21T17:00:00"
+  }
+]

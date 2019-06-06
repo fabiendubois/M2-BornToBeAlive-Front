@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "modele": "Zoe",
+    "marque": "Renault",
+    "immatriculation": "DX-567-JE",
+    "autonomie": 300,
+    "description": "Autonomie Standard Plus",
+    "latitude": 50.632681,
+    "longitude": 3.045831 
+  },
+  {
+    "id": 2,
+    "modele": "S",
+    "marque": "Tesla",
+    "immatriculation": "WW-867-JX",
+    "autonomie": 610,
+    "description": "Grande Autonomie",
+    "latitude": 50.633279,
+    "longitude": 3.047037 
+  }
+]

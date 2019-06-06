@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CarsService } from 'src/app/shared/services/cars.service';
 import * as L from 'leaflet';
 
 const LATITUDE_UNIV_CATHO_LILLE = 50.63275064259198;
@@ -13,12 +14,14 @@ const DEFAULT_ZOOM_MAP = 20;
 export class MapsComponent implements OnInit {
   stationsMap;
   mapMarker;
+  cars;
 
-  constructor() { }
+  constructor(private carsService: CarsService) { }
 
   ngOnInit() {
     this.initMap();
     this.initMapMarker();
+    this.fetchCars();
   }
 
   initMap() {
@@ -36,10 +39,25 @@ export class MapsComponent implements OnInit {
     });
   }
 
+  addAllMarkers() {
+    for (const car of this.cars) {
+      this.addMarker(car.latitude, car.longitude, `${car.marque} ${car.modele}`);
+    }
+  }
+
   addMarker(latitude, longitude, txt) {
     L.marker([latitude, longitude], { icon: this.mapMarker })
-      .addTo(this.mapMarker)
+      .addTo(this.stationsMap)
       .bindPopup(txt, { autoClose: false })
       .openPopup();
+  }
+
+  fetchCars() {
+    this.carsService.getAll().subscribe(
+      (data) => {
+        this.cars = data;
+        this.addAllMarkers();
+      }
+    );
   }
 }

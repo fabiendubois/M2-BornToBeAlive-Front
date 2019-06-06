@@ -1,0 +1,26 @@
+[
+  {
+    "cars": {
+      "id": 1,
+      "modele": "Zoe",
+      "marque": "Renault",
+      "immatriculation": "DX-567-JE",
+      "autonomie": 300,
+      "description": "Autonomie Standard Plus"
+    },
+    "debut": "2019-06-06T08:00:00",
+    "fin": "2019-06-07T17:00:00"
+  },
+  {
+    "cars": {
+      "id": 2,
+      "modele": "S",
+      "marque": "Tesla",
+      "immatriculation": "WW-867-JX",
+      "autonomie": 610,
+      "description": "Grande Autonomie"
+    },
+    "debut": "2019-05-19T08:00:00",
+    "fin": "2019-05-21T17:00:00"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Rizomm 1",
+    "power": "22",
+    "marque": "G2Mobility",
+    "organisation": "Université Catholique de Lille",
+    "latitude": 50.632681,
+    "longitude": 3.045831 
+  },
+  {
+    "id": 2,
+    "name": "Rizomm 2",
+    "power": "44",
+    "marque": "G2Mobility",
+    "organisation": "Université Catholique de Lille",
+    "latitude": 50.633279,
+    "longitude": 3.047037 
+  }
+]
